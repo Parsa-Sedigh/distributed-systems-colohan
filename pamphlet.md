@@ -33,3 +33,35 @@ Usually on disk or flash.
 ### how to operate your distributed system - the art of SRE
 
 ## L4: What could go wrong?
+
+- crash -- or crash loop
+- server down
+- data corruption
+- query of death
+- broken dependency
+- cascading failure
+- DOS attack
+- heisenbug: when the system fails in prod but we can't make it to fail in testing
+- customer reported failure
+- data loss
+- time travel: system depends on the clock in the time of the day, but for some reason it seems it has gone backwards!
+- owned: we had security breach, the system or some nodes of the system appear to be owned!
+- natural disaster
+- cause infra failure: the system itself caused an infra failure
+- operator error
+- runaway automation: automation breaks stuff
+- certificate expires
+- fail to pay bills
+- non-linear response to change
+- performance cliffs
+- very important user left the company
+- non-hermetic builds
+- firewalls
+- kernel memory leak: your processes are running on kernels which are leaking memory and they randomly crash
+- isolation failure: for example, your processes are running on a machine shared with other people's processes and their
+  perf is causing random perturbation in your processes perf
+- hash collision: you're running your computation over very large amount of data. You discover that some of your data is
+  corrupted but the checksums still check out and say the data isn't corrupted. You found a hash collision.
+- incorrect algorithm: we discovered that the algo isn't correct for all inputs. So the algo is wrong.
+
+## L5: The many types of fail
